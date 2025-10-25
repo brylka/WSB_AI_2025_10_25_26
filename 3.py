@@ -37,7 +37,7 @@ print(f"Optymalne k: {optimal_k}")
 
 knn_classifier = KNeighborsClassifier(
     n_neighbors=optimal_k,
-    weights='distance',
+    weights='distance', # uniform
     metric='euclidean'
 )
 
