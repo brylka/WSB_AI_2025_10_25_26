@@ -1,6 +1,6 @@
-from sklearn.datasets import load_breast_cancer, load_wine
+from sklearn.datasets import load_breast_cancer, load_wine, load_iris
 
-data = load_breast_cancer()
+data = load_iris()
 X = data.data
 y = data.target
 
