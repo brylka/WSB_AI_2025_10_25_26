@@ -32,3 +32,32 @@ ax2.grid(True)
 plt.tight_layout()
 plt.show()
 
+optimal_k = 4
+kmeans = KMeans(
+    n_clusters=optimal_k,
+    init='k-means++',
+    n_init=10,
+    max_iter=300,
+    random_state=42
+)
+y_mkeans = kmeans.fit_predict(X_blobs)
+
+plt.figure(figsize=(12,5))
+
+plt.subplot(1,2,1)
+plt.scatter(X_blobs[:, 0], X_blobs[:, 1], c=y_true, cmap='viridis', alpha=0.6)
+plt.title('Prawdziwe etykiety')
+plt.xlabel('Cecha 1')
+plt.ylabel('Cecha 2')
+
+plt.subplot(1,2,2)
+plt.scatter(X_blobs[:,0], X_blobs[:,1], c=y_mkeans, cmap='viridis', alpha=0.6)
+plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:,1],
+            s=300, c='red', marker='X', edgecolors='black', linewidths=2, label='Centroidy')
+plt.title('Klasteryzacja K-means')
+plt.xlabel('Cecha 1')
+plt.ylabel('Cecha 2')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
