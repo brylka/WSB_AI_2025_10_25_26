@@ -1,18 +1,18 @@
-from sklearn.datasets import load_iris
+from sklearn.datasets import load_breast_cancer
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 import matplotlib.pyplot as plt
 from sklearn import tree
 
-iris = load_iris()
+iris = load_breast_cancer()
 X = iris.data
 y = iris.target
 
 # for i in range(len(iris.data)):
 #     print(f"{i}: {iris.data[i]} -> {iris.target_names[iris.target[i]]}")
 
-#                                podział zbiory (ilość danych treningowych) \/
+#                                podział zbioru (ilość danych treningowych) \/
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 dt_classifier = DecisionTreeClassifier(
