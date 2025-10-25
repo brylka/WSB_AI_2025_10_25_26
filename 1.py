@@ -12,12 +12,13 @@ y = iris.target
 # for i in range(len(iris.data)):
 #     print(f"{i}: {iris.data[i]} -> {iris.target_names[iris.target[i]]}")
 
+#                                podział zbiory (ilość danych treningowych) \/
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 dt_classifier = DecisionTreeClassifier(
-    criterion='gini',
-    max_depth=3,
-    min_samples_split=2,
+    criterion='gini',       # 'entropy'
+    max_depth=3,            # głębokość
+    min_samples_split=2,    # minimalna ilość próbek w węźle
     random_state=42
 )
 
