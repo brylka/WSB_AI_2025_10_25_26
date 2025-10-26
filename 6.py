@@ -3,7 +3,7 @@ from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 from sklearn.metrics import silhouette_score
 
-X_blobs, y_true = make_blobs(n_samples=300, centers=4, cluster_std=0.6, random_state=42)
+X_blobs, y_true = make_blobs(n_samples=300, centers=4, cluster_std=3, random_state=42)
 
 inertias = []
 silhouette_scores = []
@@ -32,7 +32,7 @@ ax2.grid(True)
 plt.tight_layout()
 plt.show()
 
-optimal_k = 4
+optimal_k = 3
 kmeans = KMeans(
     n_clusters=optimal_k,
     init='k-means++',
