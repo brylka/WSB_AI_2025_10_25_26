@@ -30,7 +30,7 @@ plt.show()
 
 # DBSCAN z wybranymi parametrami
 dbscan = DBSCAN(
-    eps=0.3,           # promień sąsiedztwa
+    eps=0.24,           # promień sąsiedztwa
     min_samples=5,     # minimalna liczba punktów
     metric='euclidean'
 )
